@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зээлийн скоринг тооцоолуур</title>
+    <style>
+        /* Үндсэн тохиргоо */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #3498db;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #f1c40f;
+        }
+
+        .hero {
+            background: linear-gradient(to right, #3498db, #2c3e50);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 2rem;
+            background-color: white;
+        }
+
+        .feature-card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            width: 300px;
+            margin: 1rem;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Хэсгүүд рүү шилжихэд зориулсан animation */
+        section {
+            scroll-margin-top: 60px; /* Navbar-ын өндрийг тохируулна */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Зээлийн онооны систем боловсруулах нь</h1>
+    <p>Машин сургалтын аргаар зээлийн эрсдэлийг үнэн зөв таамаглах</p>
+</header>
+
+<nav>
+    <a href="taniltsuulga.html">Танилцуулга</a>
+    <a href="plan.html">Үйл ажилгааны төлөвлөгөө</a>
+    <a href="demo.html">Дэмо</a>
+    <a href="https://mandakh.edu.mn/">Мандах их сургууль</a>
+</nav>
+
+<section id="about" class="hero">
+    <h2>Зээлийн эрсдэлийг AI-аар шинжилнэ</h2>
+    <p>
+        Манай систем нь XGBoost, Random Forest зэрэг машин сургалтын алгоритмуудыг ашиглан зээлийн эрсдэлийг үнэн зөв таамаглах боломжийг олгодог. 
+        Өгөгдлийн тэнцвэргүй байдлыг SMOTE аргаар шийдэж, F1-үнэлгээг 0.80 хүртэл сайжруулсан.
+    </p>
+</section>
+
+<section id="features" class="features">
+    <div class="feature-card">
+        <h3>Машин сургалт</h3>
+        <p>XGBoost, Random Forest зэрэг алгоритмуудыг ашиглан өндөр нарийвчлалтай загваруудыг боловсруулна.</p>
+    </div>
+    <div class="feature-card">
+        <h3>Өгөгдлийн тэнцвэржүүлэлт</h3>
+        <p>SMOTE аргаар өгөгдлийг тэнцвэржүүлж, ангиллын тэнцвэргүй байдлыг шийднэ.</p>
+    </div>
+    <div class="feature-card">
+        <h3>Үнэн зөв таамаглал</h3>
+        <p>89%-ийн үнэн зөв, AUC=0.73 гэсэн үр дүнтэй загварыг ашиглана.</p>
+    </div>
+</section>
+
+<section id="demo" class="hero">
+    <h2>Туршилтын хувилбар</h2>
+    <p>
+        Манай системийн туршилтын хувилбарыг ашиглан зээлийн эрсдэлийг тооцоолж үзээрэй. Дараах холбоосоор орж үзнэ үү:
+        <a href="demo.html.html" style="color: #f1c40f; text-decoration: underline;">Туршилтын хувилбар</a>
+    </p>
+</section>
+
+<section id="contact" class="features">
+    <div class="feature-card">
+        <h3>Холбоо барих</h3>
+        <p>Утас: <a href="tel:89855290">89855290</a></p>
+        <p>Цахим шуудан: <a href="mailto:Fm21d053@gmail.com">Fm21d053@gmail.com</a></p>
+    </div>
+</section>
+<footer>
+    <p>&copy; 2024 AI Зээлийн Эрсдэлийн Тооцоолуур. Бүх эрх хуулиар хамгаалагдсан.</p>
+</footer>
+
+</body>
+</html>

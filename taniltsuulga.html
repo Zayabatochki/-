@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="mn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Танилцуулга</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Үндсэн биеийн тохиргоо */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .profile {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .profile:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 4px solid #3498db;
+        }
+
+        .profile h1 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .profile p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .profile p br {
+            display: block;
+            margin: 0.5rem 0;
+        }
+
+        footer {
+            margin-top: 2rem;
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Багшийн мэдээлэл -->
+        <div class="profile">
+            <img src="Bagsh2.png" alt="Багшийн зураг">
+            <h1>Удирдагч багш С.Цолмон</h1>
+            <p>
+                Цол зэрэг: Доктор /Ph.D/, Профессор <br>
+                Албан тушаал: Эрдмийн зөвлөлийн гишүүн <br>
+                Төгссөн сургууль: Монгол улсын их сургууль
+            </p>
+        </div>
+
+        <!-- Оюутны мэдээлэл -->
+        <div class="profile">
+            <img src="zaya.png" alt="Оюутны зураг">
+            <h1>Санхүү менежмент IV-курс Ц.Заяабат</h1>
+            <p>
+                Судлаач оюутан-2024 "Тусгай байр" <br>
+                СШУИТ ОЭШ-2023 "Тусгай байр" <br>
+                СШУИТ ОЭШ-2024 "Тэргүүн байр" <br>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

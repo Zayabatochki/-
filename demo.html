@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+    <html lang="en">
+<head>
+    <title>Дипломын ажил</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body style="text-align: center; background-color:white;">
+
+    <h1 style="border: 2px solid rgb(80, 67, 137);" ;>Зээлийн онооны системийг машин сургалтын аргаар сайжруулах нь
+    </h1>
+    <p>Банк бусын жишээн дээр.</p>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зээлийн Эрсдэлийг Тооцоологч</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Үндсэн биеийн тохиргоо */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: white;
+            color: black;
+            padding: 1rem 0;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            color: #2c3e50;
+            border: 2px solid #2c3e50;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        }
+
+        main {
+            padding: 2rem 1rem;
+        }
+
+        h1,
+        h2,
+        p {
+            margin: 1rem 0;
+        }
+
+        form {
+            background-color: white;
+            padding: 2rem;
+            margin: 0 auto;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: rgb(52, 52, 116);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: rgb(49, 49, 97);
+        }
+
+        .progress-bar {
+            width: 90%;
+            max-width: 400px;
+            margin: 1rem auto;
+            height: 30px;
+            background-color: #f3f3f3;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-bar-inner {
+            height: 100%;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+            font-weight: bold;
+            transition: width 0.4s ease;
+        }
+
+        .low-score {
+            background-color: #f44336;
+        }
+
+        .medium-score {
+            background-color: #ff9800;
+        }
+
+        .high-score {
+            background-color: blue;
+        }
+
+        footer {
+            margin-top: 2rem;
+            background-color: #333;
+            color: white;
+            padding: 1rem 0;
+            font-size: 0.9rem;
+        }
+    </style>
+    </head>
+    <body>
+
+        <h2>Зээлийн Эрсдэлийг Тооцоологч демо хувилбар</h2>
+
+        <main>
+            <h3>Санхүүгийн Эрсдэлээ Тооцоолох</h3>
+            <form>
+                <label>Сарын Орлого:</label>
+                <input id="monthlyIncome" type="number" placeholder="₮">
+                <label>Сарын Өрийн Төлбөр:</label>
+                <input id="monthlyDebt" type="number" placeholder="₮">
+                <label>Зээлийн Хэмжээ:</label>
+                <input id="loanAmount" type="number" placeholder="₮">
+                <label>Хугацаа (сар):</label>
+                <input id="loanTerm" type="number" placeholder="Сар">
+                <button type="button" onclick="calculateRiskAndScore()">Эрсдэлийг Тооцоолох</button>
+            </form>
+
+            <div class="progress-bar">
+                <div id="progressBarInner" class="progress-bar-inner" style="width: 0%;">0%</div>
+            </div>
+
+            <p id="debtRatioText"></p>
+            <p id="riskLevelText"></p>
+            <p id="creditScoreText"></p>
+        </main>
+
+        <footer>
+            &copy; 2025 Зээлийн Эрсдэлийг Тооцоологч. Бүх эрх хуулиар хамгаалагдсан.
+        </footer>
+
+        <script>
+            function calculateRiskAndScore() {
+                let monthlyIncome = parseFloat(document.getElementById("monthlyIncome").value);
+                let monthlyDebt = parseFloat(document.getElementById("monthlyDebt").value);
+                let loanAmount = parseFloat(document.getElementById("loanAmount").value);
+                let loanTerm = parseFloat(document.getElementById("loanTerm").value);
+
+                if (!isNaN(monthlyIncome) && !isNaN(monthlyDebt) && !isNaN(loanAmount) && !isNaN(loanTerm) && monthlyIncome > 0) {
+                    let debtRatio = (monthlyDebt / monthlyIncome) * 100;
+                    document.getElementById("debtRatioText").innerHTML = `Өрийн Харьцаа: ${debtRatio.toFixed(2)}%`;
+
+                    let riskScore = (loanAmount / monthlyIncome) * (debtRatio / 100) * (loanTerm / 12);
+                    let riskLevel = "";
+                    let riskPercentage = Math.min(riskScore * 100, 100);
+                    let progressBar = document.getElementById("progressBarInner");
+
+                    if (riskScore < 0.5) {
+                        riskLevel = "Бага Эрсдэл";
+                        progressBar.className = "progress-bar-inner low-score";
+                    } else if (riskScore < 1.0) {
+                        riskLevel = "Дунд Эрсдэл";
+                        progressBar.className = "progress-bar-inner medium-score";
+                    } else {
+                        riskLevel = "Өндөр Эрсдэл";
+                        progressBar.className = "progress-bar-inner high-score";
+                    }
+
+                    progressBar.style.width = riskPercentage + "%";
+                    progressBar.innerHTML = riskPercentage.toFixed(2) + "%";
+                    document.getElementById("riskLevelText").innerHTML = `Эрсдэлийн Түвшин: ${riskLevel}`;
+
+                    let creditScore = 850 - (riskScore * 500);
+                    creditScore = Math.max(300, Math.min(850, creditScore));
+
+                    let creditScoreLevel = creditScore >= 750 ? "Маш Сайн" : creditScore >= 600 ? "Сайн" : "Муу";
+                    document.getElementById("creditScoreText").innerHTML = `Зээлийн Оноо: ${creditScore.toFixed(0)} (${creditScoreLevel})`;
+                } else {
+                    alert("Бүх талбаруудыг зөв оруулна уу!");
+                }
+            }
+        </script>
+
+    </body>
+
+</html>
