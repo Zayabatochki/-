@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дипломын ажлын төлөвлөгөө</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #313f90;
+            margin-bottom: 20px;
+        }
+        .box {
+            fill: #313f90;
+            stroke: #ffffff;
+            stroke-width: 2;
+            rx: 10;
+            ry: 10;
+            transition: fill 0.3s ease;
+        }
+        .box:hover {
+            fill: #1e2a6d;
+        }
+        .arrow {
+            stroke: #313f90;
+            stroke-width: 2;
+            marker-end: url(#arrowhead);
+        }
+        text {
+            font-size: 14px;
+            fill: white;
+            text-anchor: middle;
+            pointer-events: none;
+        }
+        svg {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Схем</h1>
+    <svg width="800" height="600">
+        <!-- 1. Оршил -->
+        <rect x="50" y="50" width="200" height="80" class="box" />
+        <text x="150" y="70">
+            <tspan x="150" dy="1.2em">1. Оршил</tspan>
+            <tspan x="150" dy="1.2em">- Асуудлын тайлбар</tspan>
+            <tspan x="150" dy="1.2em">- Судалгааны зорилго</tspan>
+            <tspan x="150" dy="1.2em">- Судалгааны ач холбогдол</tspan>
+            <tspan x="150" dy="1.2em">- Судалгааны арга зүй</tspan>
+        </text>
+
+        <!-- Сум (1-р холболт) -->
+        <line x1="250" y1="90" x2="310" y2="90" class="arrow" />
+
+        <!-- 2. Теорийн хэсэг -->
+        <rect x="310" y="50" width="200" height="80" class="box" />
+        <text x="410" y="70">
+            <tspan x="410" dy="1.2em">2. Онолын хэсэг </tspan>
+            <tspan x="410" dy="1.2em">- Зээлийн оноо</tspan>
+            <tspan x="410" dy="1.2em">- Машин сургалт (холмиг сургалт)</tspan>
+            <tspan x="410" dy="1.2em">- Өмнөх судалгаа</tspan>
+        </text>
+
+        <!-- Сум (2-р холболт) -->
+        <line x1="510" y1="90" x2="570" y2="90" class="arrow" />
+
+        <!-- 3. Өгөгдөл ба судалгааны арга -->
+        <rect x="570" y="50" width="200" height="80" class="box" />
+        <text x="670" y="70">
+            <tspan x="670" dy="1.2em">3. Өгөгдөл ба судалгааны арга</tspan>
+            <tspan x="670" dy="1.2em">- Өгөгдлийн эх сурвалж</tspan>
+            <tspan x="670" dy="1.2em">- Өгөгдөл боловсруулах</tspan>
+            <tspan x="670" dy="1.2em">- Машин сургалтын загвар</tspan>
+        </text>
+
+        <!-- Сум (3-р холболт) -->
+        <line x1="50" y1="200" x2="50" y2="250" class="arrow" />
+
+        <!-- 4. Туршилт ба үр дүн -->
+        <rect x="50" y="250" width="200" height="80" class="box" />
+        <text x="150" y="270">
+            <tspan x="150" dy="1.2em">4. Туршилт ба үр дүн</tspan>
+            <tspan x="150" dy="1.2em">- Туршилтын үр дүн</tspan>
+            <tspan x="150" dy="1.2em">- Үр дүнгийн шинжилгээ</tspan>
+        </text>
+
+        <!-- Сум (4-р холболт) -->
+        <line x1="250" y1="290" x2="310" y2="290" class="arrow" />
+
+        <!-- 5. Дүгнэлт ба санал -->
+        <rect x="310" y="250" width="200" height="80" class="box" />
+        <text x="410" y="270">
+            <tspan x="410" dy="1.2em">5. Дүгнэлт ба санал</tspan>
+            <tspan x="410" dy="1.2em">- Судалгааны дүгнэлт</tspan>
+            <tspan x="410" dy="1.2em">- Цаашид судлах асуудал</tspan>
+        </text>
+
+        <!-- Сум (5-р холболт) -->
+        <line x1="510" y1="290" x2="570" y2="290" class="arrow" />
+
+        <!-- 6. Ном зүй -->
+        <rect x="570" y="250" width="200" height="80" class="box" />
+        <text x="670" y="270">
+            <tspan x="670" dy="1.2em">6. Ном зүй</tspan>
+            <tspan x="670" dy="1.2em">- Ашигласан материал</tspan>
+        </text>
+
+        <!-- Сум (6-р холболт) -->
+        <line x1="50" y1="400" x2="50" y2="450" class="arrow" />
+
+        <!-- 7. Хавсралт -->
+        <rect x="50" y="450" width="200" height="80" class="box" />
+        <text x="150" y="470">
+            <tspan x="150" dy="1.2em">7. Хавсралт</tspan>
+            <tspan x="150" dy="1.2em">- Туршилтын өгөгдөл</tspan>
+            <tspan x="150" dy="1.2em">- Код, график</tspan>
+        </text>
+
+        <!-- Сумны толгой (arrowhead) -->
+        <defs>
+            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                <polygon points="0 0, 10 3.5, 0 7" fill="#313f90" />
+            </marker>
+        </defs>
+    </svg>
+</body>
+</html>
